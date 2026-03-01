@@ -6,7 +6,12 @@ const themes = require('./words');
 
 const app = express();
 const server = createServer(app);
-const io = new Server(server);
+const io = new Server(server, {
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"]
+  }
+});
 
 const PORT = process.env.PORT || 3000;
 
@@ -394,6 +399,6 @@ function endRound(room) {
   }
 }
 
-server.listen(PORT, () => {
-  console.log(`Word Match Game server running on http://localhost:${PORT}`);
+server.listen(PORT, '0.0.0.0', () => {
+  console.log(`Word Match Game server running on port ${PORT}`);
 });
