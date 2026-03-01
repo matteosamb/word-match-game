@@ -30,6 +30,13 @@ function showScreen(name) {
 
 // Lobby Screen
 const playerNameInput = document.getElementById('player-name');
+const howToPlayBtn = document.getElementById('how-to-play-btn');
+const instructions = document.getElementById('instructions');
+
+howToPlayBtn.addEventListener('click', () => {
+  instructions.classList.toggle('hidden');
+  howToPlayBtn.textContent = instructions.classList.contains('hidden') ? 'How to Play' : 'Hide Instructions';
+});
 const createBtn = document.getElementById('create-btn');
 const roomCodeInput = document.getElementById('room-code-input');
 const joinBtn = document.getElementById('join-btn');
