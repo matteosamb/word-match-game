@@ -409,8 +409,14 @@ select {
 }
 
 .prompt-word .blank {
-  color: var(--primary);
-  opacity: 0.6;
+  display: inline-block;
+  color: white;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  padding: 4px 20px;
+  margin: 0 6px;
+  min-width: 50px;
+  font-weight: 400;
 }
 
 #hint {

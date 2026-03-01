@@ -215,9 +215,9 @@ socket.on('new-round', (data) => {
 
   // Display word with position indicator
   if (data.position === 'before') {
-    promptWordEl.innerHTML = `${data.word} <span class="blank">___</span>`;
+    promptWordEl.innerHTML = `${data.word}<span class="blank">?</span>`;
   } else {
-    promptWordEl.innerHTML = `<span class="blank">___</span> ${data.word}`;
+    promptWordEl.innerHTML = `<span class="blank">?</span>${data.word}`;
   }
 
   // Hide hint initially, show after 5 seconds
