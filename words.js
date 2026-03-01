@@ -1131,6 +1131,186 @@ const themes = {
     ]
   },
 
+  edm: {
+    name: "EDM & Festivals",
+    words: [
+      // Festivals
+      "electric",   // zoo, forest, daisy
+      "ultra",      // music festival
+      "tomorrow",   // land, world
+      "coachella",  // festival
+      "burning",    // man
+      "edc",        // vegas, orlando
+      "hard",       // summer, fest
+      "spring",     // awakening
+      "beyond",     // wonderland
+      "escape",     // halloween
+      "nocturnal",  // wonderland
+      "dream",      // state
+      "lost",       // lands
+      "bass",       // canyon, drop
+      "sun",        // burn
+      "movement",   // detroit
+      "arc",        // music festival
+      "lolla",      // palooza
+      "bonnaroo",   // festival
+      "south",      // west (SXSW)
+      "miami",      // music week
+      "ibiza",      // island
+      "tomorrowland",// belgium
+      "creamfields",// uk
+      "defqon",     // one
+      "mysteryland",// festival
+      "awakenings", // festival
+
+      // DJs & Artists
+      "dead",       // mau5
+      "marsh",      // mello
+      "daft",       // punk
+      "swedish",    // house mafia
+      "calvin",     // harris
+      "david",      // guetta
+      "martin",     // garrix
+      "tiesto",     // dj
+      "avicii",     // tribute
+      "skrillex",   // dubstep
+      "diplo",      // major lazer
+      "kygo",       // tropical
+      "zedd",       // dj
+      "porter",     // robinson
+      "illenium",   // dj
+      "seven",      // lions
+      "above",      // beyond
+      "knife",      // party
+      "nero",       // dj
+      "flume",      // dj
+      "odesza",     // group
+      "rufus",      // du sol
+      "disclosure", // duo
+      "major",      // lazer
+      "rl",         // grime
+      "alison",     // wonderland
+      "charlotte",  // de witte
+      "fisher",     // dj
+      "chris",      // lake
+      "dom",        // dolla
+      "john",       // summit
+      "lane",       // 8
+      "eric",       // prydz
+      "carl",       // cox
+      "adam",       // beyer
+      "amelie",     // lens
+      "boris",      // brejcha
+
+      // Genres
+      "house",      // music
+      "techno",     // music
+      "trance",     // music
+      "dubstep",    // music
+      "drum",       // bass
+      "future",     // bass, house
+      "deep",       // house
+      "progressive",// house
+      "tech",       // house
+      "melodic",    // techno
+      "big",        // room
+      "electro",    // house
+      "tropical",   // house
+      "hard",       // style
+      "psytrance",  // music
+      "minimal",    // techno
+      "acid",       // house
+      "garage",     // uk
+      "jungle",     // dnb
+      "breaks",     // music
+
+      // EDM terms
+      "drop",       // beat drop
+      "build",      // up
+      "breakdown",  // section
+      "banger",     // track
+      "anthem",     // song
+      "remix",      // version
+      "bootleg",    // remix
+      "mashup",     // mix
+      "edit",       // version
+      "vip",        // mix, section
+      "extended",   // mix
+      "radio",      // edit
+      "club",       // mix
+      "festival",   // set
+      "after",      // party, hours
+      "warehouse",  // party, rave
+      "rave",       // party
+      "underground",// scene
+      "plur",       // peace love
+      "kandi",      // bracelets
+      "totem",      // pole
+      "light",      // show
+      "laser",      // lights
+      "strobe",     // light
+      "confetti",   // cannon
+      "pyro",       // technics
+      "visuals",    // vj
+      "stage",      // main, design
+      "sound",      // system
+      "speaker",    // stack
+      "sub",        // woofer, bass
+      "decks",      // turntables
+      "mixer",      // dj
+      "cdj",        // pioneer
+      "sync",       // button
+      "beatmatch",  // dj skill
+      "transition", // mixing
+      "b2b",        // back to back
+      "closing",    // set
+      "opening",    // set
+      "headliner",  // main act
+      "sunrise",    // set
+      "sunset",     // set
+      "pool",       // party
+      "day",        // party
+      "night",      // club
+      "bottle",     // service
+      "guest",      // list
+      "wristband",  // entry
+      "ga",         // general admission
+      "vip",        // section
+      "backstage",  // pass
+      "green",      // room
+
+      // Venues / Clubs
+      "space",      // miami, ibiza
+      "berghain",   // berlin
+      "fabric",     // london
+      "output",     // brooklyn
+      "marquee",    // vegas
+      "hakkasan",   // vegas
+      "omnia",      // vegas
+      "xs",         // encore
+      "zouk",       // vegas, singapore
+      "ushuaia",    // ibiza
+      "amnesia",    // ibiza
+      "pacha",      // ibiza
+      "hï",         // ibiza
+      "printworks", // london
+      "warehouse",  // project
+      "echostage",  // dc
+      "avant",      // gardner
+      "brooklyn",   // mirage
+      "stereo",     // montreal
+      "sound",      // la, bar
+      "exchange",   // la
+      "academy",    // la
+      "halcyon",    // sf
+      "audio",      // sf
+      "prysm",      // chicago
+      "spybar",     // chicago
+      "coda",       // toronto
+      "rebel",      // toronto
+    ]
+  },
+
   travel: {
     name: "Travel & Places",
     words: [
