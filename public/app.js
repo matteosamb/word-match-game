@@ -35,7 +35,7 @@ const instructions = document.getElementById('instructions');
 
 howToPlayBtn.addEventListener('click', () => {
   instructions.classList.toggle('hidden');
-  howToPlayBtn.textContent = instructions.classList.contains('hidden') ? 'How to Play' : 'Hide Instructions';
+  howToPlayBtn.textContent = instructions.classList.contains('hidden') ? 'How to Play' : 'Hide';
 });
 const createBtn = document.getElementById('create-btn');
 const roomCodeInput = document.getElementById('room-code-input');
