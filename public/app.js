@@ -349,11 +349,23 @@ const playAgainBtn = document.getElementById('play-again-btn');
 socket.on('game-over', (data) => {
   showScreen('gameover');
 
-  const winner = data.scores[0];
-  winnerDisplay.innerHTML = `
-    <span class="trophy">🏆</span>
-    ${winner.name} wins with ${winner.score} points!
-  `;
+  const topScore = data.scores[0].score;
+  const winners = data.scores.filter(p => p.score === topScore);
+
+  if (winners.length > 1) {
+    // Tie game
+    const names = winners.map(w => w.name).join(' & ');
+    winnerDisplay.innerHTML = `
+      <span class="trophy">🤝</span>
+      It's a tie!<br>${names} with ${topScore} points!
+    `;
+  } else {
+    // Single winner
+    winnerDisplay.innerHTML = `
+      <span class="trophy">🏆</span>
+      ${winners[0].name} wins with ${topScore} points!
+    `;
+  }
 
   finalScoresList.innerHTML = '';
   data.scores.forEach((s, index) => {
