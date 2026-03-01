@@ -37,7 +37,7 @@ function generateRoomCode() {
 // Get a random word from the selected theme
 function getRandomWord(usedWords, theme = 'all') {
   const words = themes[theme]?.words || themes.all.words;
-  const available = words.filter(w => !usedWords.includes(w));
+  const available = words.filter(w => !usedWords.some(u => u.word === w.word && u.position === w.position));
   if (available.length === 0) {
     return words[Math.floor(Math.random() * words.length)];
   }
@@ -290,15 +290,18 @@ function startNewRound(room) {
   }
 
   // Get a new word from selected theme
-  room.currentWord = getRandomWord(room.usedWords, room.theme);
-  room.usedWords.push(room.currentWord);
+  const wordData = getRandomWord(room.usedWords, room.theme);
+  room.currentWord = wordData;
+  room.usedWords.push(wordData);
 
-  console.log(`Round ${room.currentRound} in room ${room.code}: "${room.currentWord}"`);
+  console.log(`Round ${room.currentRound} in room ${room.code}: "${wordData.word}" (${wordData.position})`);
 
   io.to(room.code).emit('new-round', {
     round: room.currentRound,
     totalRounds: room.totalRounds,
-    word: room.currentWord,
+    word: wordData.word,
+    position: wordData.position,
+    hint: wordData.hint,
     time: room.roundTime
   });
 

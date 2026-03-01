@@ -195,11 +195,13 @@ const currentRoundEl = document.getElementById('current-round');
 const totalRoundsEl = document.getElementById('total-rounds');
 const timerEl = document.getElementById('timer');
 const promptWordEl = document.getElementById('prompt-word');
+const hintEl = document.getElementById('hint');
 const answerInput = document.getElementById('answer-input');
 const submitBtn = document.getElementById('submit-btn');
 const answerStatus = document.getElementById('answer-status');
 
 let timerInterval = null;
+let hintTimeout = null;
 
 socket.on('new-round', (data) => {
   state.currentRound = data.round;
@@ -210,7 +212,24 @@ socket.on('new-round', (data) => {
 
   currentRoundEl.textContent = data.round;
   totalRoundsEl.textContent = data.totalRounds;
-  promptWordEl.textContent = data.word;
+
+  // Display word with position indicator
+  if (data.position === 'before') {
+    promptWordEl.innerHTML = `${data.word} <span class="blank">___</span>`;
+  } else {
+    promptWordEl.innerHTML = `<span class="blank">___</span> ${data.word}`;
+  }
+
+  // Hide hint initially, show after 5 seconds
+  hintEl.classList.add('hidden');
+  hintEl.textContent = `Hint: Think "${data.hint}"`;
+  clearTimeout(hintTimeout);
+  hintTimeout = setTimeout(() => {
+    if (!state.submitted) {
+      hintEl.classList.remove('hidden');
+    }
+  }, 5000);
+
   answerInput.value = '';
   answerInput.disabled = false;
   submitBtn.disabled = false;
@@ -290,6 +309,7 @@ const nextRoundMsg = document.getElementById('next-round-msg');
 
 socket.on('round-results', (data) => {
   clearInterval(timerInterval);
+  clearTimeout(hintTimeout);
   document.getElementById('game-screen').classList.remove('waiting');
   showScreen('results');
 
