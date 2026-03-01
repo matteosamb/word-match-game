@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Word Match</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Lobby Screen -->
+    <div id="lobby-screen" class="screen active">
+      <h1>Word Match</h1>
+      <p class="subtitle">Think alike, score together!</p>
+
+      <div class="name-input">
+        <input type="text" id="player-name" placeholder="Your name" maxlength="12" autocomplete="off">
+      </div>
+
+      <div class="buttons">
+        <button id="create-btn" class="btn primary">Create Room</button>
+        <div class="divider">or</div>
+        <div class="join-section">
+          <input type="text" id="room-code-input" placeholder="Room code" maxlength="4" autocomplete="off">
+          <button id="join-btn" class="btn secondary">Join</button>
+        </div>
+      </div>
+
+      <p id="lobby-error" class="error"></p>
+    </div>
+
+    <!-- Waiting Room Screen -->
+    <div id="waiting-screen" class="screen">
+      <h2>Room: <span id="room-code-display"></span></h2>
+
+      <div class="players-section">
+        <h3>Players</h3>
+        <ul id="player-list"></ul>
+      </div>
+
+      <div id="host-controls" class="host-controls hidden">
+        <div class="settings">
+          <label>
+            Theme:
+            <select id="theme-select">
+              <option value="all">All Words</option>
+            </select>
+          </label>
+          <label>
+            Rounds:
+            <select id="rounds-select">
+              <option value="3">3</option>
+              <option value="5" selected>5</option>
+              <option value="7">7</option>
+              <option value="10">10</option>
+            </select>
+          </label>
+          <label>
+            Time:
+            <select id="time-select">
+              <option value="10">10s</option>
+              <option value="15" selected>15s</option>
+              <option value="20">20s</option>
+              <option value="30">30s</option>
+              <option value="45">45s</option>
+              <option value="60">60s</option>
+            </select>
+          </label>
+        </div>
+        <button id="start-btn" class="btn primary large" disabled>
+          Start Game
+        </button>
+        <p class="hint">Need at least 2 players</p>
+      </div>
+
+      <div id="guest-message" class="guest-message hidden">
+        <p>Waiting for host to start...</p>
+      </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="screen">
+      <div class="game-header">
+        <span class="round-info">Round <span id="current-round">1</span>/<span id="total-rounds">5</span></span>
+        <span id="timer" class="timer">15</span>
+      </div>
+
+      <div class="prompt-section">
+        <p class="prompt-label">What word comes to mind?</p>
+        <div id="prompt-word" class="prompt-word"></div>
+      </div>
+
+      <div class="answer-section">
+        <input type="text" id="answer-input" placeholder="Type your answer..." maxlength="30" autocomplete="off">
+        <button id="submit-btn" class="btn primary">Submit</button>
+      </div>
+
+      <div class="status-section">
+        <p id="answer-status"></p>
+      </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="results-screen" class="screen">
+      <h2>Round Results</h2>
+
+      <div id="answers-list" class="answers-list"></div>
+
+      <div class="scoreboard">
+        <h3>Scores</h3>
+        <ul id="scores-list"></ul>
+      </div>
+
+      <p id="next-round-msg" class="next-round-msg">Next round starting...</p>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="gameover-screen" class="screen">
+      <h2>Game Over!</h2>
+
+      <div class="final-results">
+        <div id="winner-display" class="winner-display"></div>
+        <ul id="final-scores-list" class="final-scores"></ul>
+      </div>
+
+      <button id="play-again-btn" class="btn primary large">Play Again</button>
+      <button id="leave-btn" class="btn secondary">Leave Room</button>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
